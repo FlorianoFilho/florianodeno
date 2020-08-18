@@ -5,7 +5,7 @@ const argPort = flags.parse(Deno.args).port;
 const port = argPort ? Number(argPort) : DEFAULT_PORT;
 const s = serve({ port: port });
 console.log(`http://localhost:${port}/`)
-const body = new TextEncoder().encode("<h1 style='margin: 10% auto; width: 60%;'> <font color = blue><marquee>Leandro Vilas Boas, obrigado! Floriano.</marquee></font></h1>\n");
+const body = new TextEncoder().encode("<h1 style='margin: 10% auto; width: 60%; color = blue;'><marquee>Leandro Vilas Boas, obrigado! Floriano.</marquee></h1>\n");
 for await (const req of s) {
      req.respond({ body: body });
 }
